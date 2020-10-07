@@ -81,8 +81,7 @@ class Student
       FROM students
     SQL
     
-    DB[:conn].execute(sql).map do |row|
-      self.all
+    DB[:conn].execute(sql)
     end
     
   end
