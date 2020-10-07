@@ -71,7 +71,7 @@ class Student
     SQL
     
     DB[:conn].execute(sql).map do |row|
-      self.all_students_in_grade_9
+      self.all
     end
     
   end
