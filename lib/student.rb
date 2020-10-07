@@ -70,7 +70,9 @@ class Student
       WHERE grade = 9
     SQL
     
-     DB[:conn].execute(sql, grade)
+    DB[:conn].execute(sql, grade).map do |row|
+      self.all_students_in_grade_9
+    end
     
   end
   
