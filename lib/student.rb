@@ -94,7 +94,8 @@ class Student
       WHERE grade = 10
     SQL
     
-    DB[:conn].execute(sql)
+    DB[:conn].execute(sql).map do |row|
+      self.all
     end.first
   end
   
