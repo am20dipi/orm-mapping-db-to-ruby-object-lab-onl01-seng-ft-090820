@@ -114,9 +114,7 @@ class Student
       WHERE grade = x 
     SQL
     
-    DB[:conn].execute(sql, x).map do |row|
-      self.all
-    end
+    DB[:conn].execute(sql, x)
     
   end
 end
