@@ -91,10 +91,11 @@ class Student
     sql = <<-SQL
       SELECT * 
       FROM students 
-      WHERE grade = "10" LIMIT 1
+      WHERE grade = 10
     SQL
     
     DB[:conn].execute(sql)
+    end.first
   end
   
   def self.first_student_in_grade_10
@@ -118,7 +119,6 @@ class Student
     
     DB[:conn].execute(sql, grade).collect do |row|
       self.new_from_db(row)
-    end.first
-    
+    end
   end
 end
