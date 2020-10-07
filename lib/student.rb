@@ -85,6 +85,7 @@ class Student
     DB[:conn].execute(sql).map do |row|
       self.all
     end
+    students
   end
   
   def self.first_X_students_in_grade_10()
