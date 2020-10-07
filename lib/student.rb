@@ -32,9 +32,9 @@ class Student
       LIMIT 1
     SQL
     
-    DB[:conn].execute(sql, name).map do |row|
+    DB[:conn].execute(sql, name).map do |row| #return value of the .map method is an array
       self.new_from_db(row)
-    end.first
+    end.first #grabbing the first element of the returned array
   end
   
   def save
