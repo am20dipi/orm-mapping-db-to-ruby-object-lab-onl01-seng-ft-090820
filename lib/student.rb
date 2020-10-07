@@ -77,12 +77,11 @@ class Student
   
   def self.students_below_12th_grade
     sql = <<-SQL
-      SELECT *
+      SELECT COUNT(grade <= 12)
       FROM students
-      WHERE grade <= 11
     SQL
     
-    DB[:conn].execute(sql, name).map do |row|
+    DB[:conn].execute(sql).map do |row|
       self.all
     end
     
