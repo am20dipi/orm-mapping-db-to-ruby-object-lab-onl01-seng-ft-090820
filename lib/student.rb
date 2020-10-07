@@ -111,7 +111,7 @@ class Student
     sql = <<-SQL
       SELECT *
       FROM students
-      WHERE grade = x 
+      WHERE grade = "x" LIMIT ?
     SQL
     
     DB[:conn].execute(sql, x)
