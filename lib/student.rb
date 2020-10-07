@@ -82,7 +82,7 @@ class Student
       WHERE grade < 12
     SQL
     
-    DB[:conn].execute(sql).map do |name|
+    DB[:conn].execute(sql).map do |name, grade|
       self.all  
     end
   end
@@ -95,8 +95,6 @@ class Student
     SQL
     
     DB[:conn].execute(sql, x)
-    
-    
   end
   
   def self.first_student_in_grade_10
