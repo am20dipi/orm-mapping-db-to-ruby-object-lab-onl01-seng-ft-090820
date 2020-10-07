@@ -79,7 +79,7 @@ class Student
     sql = <<-SQL
       SELECT *
       FROM students
-      WHERE grade < 12
+      WHERE grade < "12"
     SQL
     
     DB[:conn].execute(sql)
@@ -89,7 +89,7 @@ class Student
     sql = <<-SQL
       SELECT * 
       FROM students 
-      WHERE grade = 10 LIMIT 1
+      WHERE grade = "10" LIMIT 1
     SQL
     
     DB[:conn].execute(sql, x)
@@ -99,7 +99,7 @@ class Student
     sql = <<-SQL
       SELECT *
       FROM students
-      WHERE grade = 10 LIMIT 1
+      WHERE grade = "10" LIMIT 1
     SQL
     
     DB[:conn].execute(sql)
