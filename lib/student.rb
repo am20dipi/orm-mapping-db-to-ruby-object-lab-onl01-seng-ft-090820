@@ -77,9 +77,8 @@ class Student
   
   def self.students_below_12th_grade
     sql = <<-SQL
-      SELECT *
+      SELECT COUNT(grade < 12)
       FROM students
-      WHERE grade < 12
     SQL
     
     DB[:conn].execute(sql)
